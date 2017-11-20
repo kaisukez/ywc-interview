@@ -18,6 +18,7 @@ class App extends Component {
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleMajorChange = this.handleMajorChange.bind(this)
+    this.handleInputKeyPress = this.handleInputKeyPress.bind(this)
   }
 
   componentDidMount() {
@@ -41,11 +42,17 @@ class App extends Component {
   }
 
   handleInputChange(event) {
-    this.setState({ inputValue: event.target.value }, () => {console.log("inputValue: " + this.state.inputValue)})
+    this.setState({ inputValue: event.target.value })
+  }
+
+  handleInputKeyPress(event) {
+    if(/* event.key === "Enter" || */ event.key === "Escape") {
+      this.setState({ inputValue: "" })
+    }
   }
 
   handleMajorChange(event) {
-    this.setState({ major: event.target.value }, () => {console.log("major: " + this.state.major)})
+    this.setState({ major: event.target.value })
   }
 
   render() {
@@ -55,13 +62,16 @@ class App extends Component {
         <SearchBar
           inputValue={this.state.inputValue}
           handleInputChange={this.handleInputChange}
+          handleInputKeyPress={this.handleInputKeyPress}
         />
         <MajorOptions
+          major={this.state.major}
           handleMajorChange={this.handleMajorChange}
         />
         <IntervieweeTable
           intervieweeList={this.state.intervieweeList}
           major={this.state.major}
+          inputValue={this.state.inputValue}
         />
       </div>
     );

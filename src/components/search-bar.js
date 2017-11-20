@@ -5,8 +5,9 @@ const SearchBar = (props) => {
       <div className="SearchBar">
         <input
           type="text"
-          defaultValue={props.inputValue}
+          value={props.inputValue}
           onChange={props.handleInputChange}
+          onKeyDown={props.handleInputKeyPress}
         />
       </div>
     );
