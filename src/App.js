@@ -66,10 +66,10 @@ class App extends Component {
     })
   }
 
-  handleMajorChange(event) {
+  handleMajorChange(major) {
     this.setState({
-      major: event.target.value,
-      majorTemp: event.target.value
+      major,
+      majorTemp: major
     })
   }
 

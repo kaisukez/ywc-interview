@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Wrapper = styled.div `
+  height: ${props => props.height || '50px'};Wrapper
+`
+
 const Div = styled.div `
   border-top: 4px solid grey;
   border-bottom: 4px solid grey;
@@ -40,7 +44,7 @@ const WIDTH = "120px", HEIGHT = "50px";
 
 const SearchBar = (props) => {
   return (
-    <div>
+    <Wrapper className="SearchBar">
       <Div width={WIDTH} height={HEIGHT}>
         <Input
           // id="search-field"
@@ -59,7 +63,7 @@ const SearchBar = (props) => {
       >
         Clear (ESC)
       </Button>
-    </div>
+    </Wrapper>
   );
 }
 
