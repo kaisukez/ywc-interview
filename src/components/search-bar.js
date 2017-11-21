@@ -10,9 +10,9 @@ const Div = styled.div `
   border-bottom: 4px solid grey;
   border-left: 4px solid grey;
   width: ${props =>
-    'calc(100% - ' + props.width + ')' || 'calc(100% - 60px)'
+    'calc(100% - ' + props.width + 'px)' || 'calc(100% - 60px)'
   };
-  height: ${props => props.height || '50px'};
+  height: ${props => props.height + 'px'};
   float: left;
 `
 
@@ -32,15 +32,16 @@ const Button = styled.button `
   padding: 0px;
   float: right;
   color: white;
-  width: ${props => props.width || '120px'};
-  height: ${props => props.height || '50px'};
+  width: ${props => props.width + 'px'};
+  height: ${props => props.height + 'px'};
   transition: background 0.5s;
+  cursor: pointer;
   &:hover {
     background: lightgrey;
   }
 `
 
-const WIDTH = "120px", HEIGHT = "50px";
+const WIDTH = 120, HEIGHT = 50;
 
 const SearchBar = (props) => {
   return (

@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Table = styled.table `
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+`
 
 const ItervieweeTable = (props) => {
   const renderRow = () => {
@@ -31,8 +38,8 @@ const ItervieweeTable = (props) => {
   // console.log(props.intervieweeList.filter(people => people.major === props.major))
 
   return (
-    <div className="ItervieweeTable">
-      <table>
+    <div>
+      <Table>
         <thead>
           <tr>
             <th>Ref</th>
@@ -42,7 +49,7 @@ const ItervieweeTable = (props) => {
         <tbody>
           {renderRow()}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }

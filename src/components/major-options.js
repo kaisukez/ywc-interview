@@ -2,55 +2,99 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Option = styled.div `
-  height: ${props => props.height || "50px"};
-  padding: 0;
+  height: ${props => props.height + 'px'};
+`
+
+const Padding = styled.div `
+  padding: ${props => props.padding + 'px'};
+`
+
+const InnerOption = styled.div `
   text-align: center;
-  line-height: ${props => props.height || "50px"};
+  line-height: ${props => (props.height - 2*props.padding) + 'px'};
+  height: 100%;
+
+
   background: ${props => props.checked ? "lightgrey" : "grey"};
   color: white;
+  cursor: pointer;
   transition: background 0.5s;
   &:hover {
     background: lightgrey;
   }
 `
 
-const HEIGHT = "50px";
+const HEIGHT = 60, PADDING = 10;
 
 const MajorOptions = (props) => {
   return (
-    <div className="MajorOptions">
+    <div>
       <div className="row">
         <Option
-          className="option col-lg-3 col-sm-6"
+          className="col-lg-3 col-sm-6"
           height={ HEIGHT }
-          checked={ "content" === props.major }
-          onClick={ () => {props.handleMajorChange("content")} }
         >
-          Content
+          <Padding padding={ PADDING }>
+            <InnerOption
+              height={ HEIGHT }
+              padding={ PADDING }
+              checked={ "content" === props.major }
+              onClick={ () => {props.handleMajorChange("content")} }
+            >
+              Content
+            </InnerOption>
+          </Padding>
         </Option>
+
+
         <Option
-          className="option col-lg-3 col-sm-6"
+          className="col-lg-3 col-sm-6"
           height={ HEIGHT }
-          checked={ "design" === props.major }
-          onClick={ () => {props.handleMajorChange("design")} }
         >
-          Design
+          <Padding padding={ PADDING }>
+            <InnerOption
+              height={ HEIGHT }
+              padding={ PADDING }
+              checked={ "design" === props.major }
+              onClick={ () => {props.handleMajorChange("design")} }
+            >
+              Design
+            </InnerOption>
+          </Padding>
         </Option>
+
+
         <Option
-          className="option col-lg-3 col-sm-6"
+          className="col-lg-3 col-sm-6"
           height={ HEIGHT }
-          checked={ "marketing" === props.major }
-          onClick={ () => {props.handleMajorChange("marketing")} }
         >
-          Marketing
+          <Padding padding={ PADDING }>
+            <InnerOption
+              height={ HEIGHT }
+              padding={ PADDING }
+              checked={ "marketing" === props.major }
+              onClick={ () => {props.handleMajorChange("marketing")} }
+            >
+              Marketing
+            </InnerOption>
+          </Padding>
         </Option>
+
+
         <Option
-          className="option col-lg-3 col-sm-6"
+          className="col-lg-3 col-sm-6"
           height={ HEIGHT }
-          checked={ "programming" === props.major }
-          onClick={ () => {props.handleMajorChange("programming")} }
         >
-          Programming
+          <Padding padding={ PADDING }>
+            <InnerOption
+              height={ HEIGHT }
+              padding={ PADDING }
+              checked={ "programming" === props.major }
+              onClick={ () => {props.handleMajorChange("programming")} }
+            >
+              Programming
+            </InnerOption>
+          </Padding>
         </Option>
       </div>
     </div>

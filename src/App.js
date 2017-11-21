@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 // import _ from 'lodash';
 
 import SearchBar from './components/search-bar'
@@ -7,6 +8,10 @@ import MajorOptions from './components/major-options'
 import IntervieweeTable from './components/interviewee-table'
 
 import './App.css';
+
+const Margin = styled.div `
+  margin-top: ${props => props.margin}
+`
 
 class App extends Component {
   constructor(props) {
@@ -83,10 +88,12 @@ class App extends Component {
           handleClear={this.handleClear}
           handleInputKeyPress={this.handleInputKeyPress}
         />
+        <Margin margin="5px" />
         <MajorOptions
           major={this.state.major}
           handleMajorChange={this.handleMajorChange}
         />
+        <Margin margin="5px" />
         <IntervieweeTable
           intervieweeList={this.state.intervieweeList}
           major={this.state.major}
