@@ -14,10 +14,12 @@ class App extends Component {
     this.state = {
       intervieweeList: [],
       inputValue: "",
-      major: "programming"
+      major: "programming",
+      majorTemp: "programming"
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleMajorChange = this.handleMajorChange.bind(this)
+    this.handleClear= this.handleClear.bind(this)
     this.handleInputKeyPress = this.handleInputKeyPress.bind(this)
   }
 
@@ -42,17 +44,33 @@ class App extends Component {
   }
 
   handleInputChange(event) {
-    this.setState({ inputValue: event.target.value })
+    this.setState({
+      inputValue: event.target.value,
+      major: event.target.value === "" ? this.state.majorTemp : "none"
+    })
   }
 
   handleInputKeyPress(event) {
     if(/* event.key === "Enter" || */ event.key === "Escape") {
-      this.setState({ inputValue: "" })
+      this.setState({
+        inputValue: "",
+        major: this.state.majorTemp
+      })
     }
   }
 
+  handleClear() {
+    this.setState({
+      inputValue: "",
+      major: this.state.majorTemp
+    })
+  }
+
   handleMajorChange(event) {
-    this.setState({ major: event.target.value })
+    this.setState({
+      major: event.target.value,
+      majorTemp: event.target.value
+    })
   }
 
   render() {
@@ -62,6 +80,7 @@ class App extends Component {
         <SearchBar
           inputValue={this.state.inputValue}
           handleInputChange={this.handleInputChange}
+          handleClear={this.handleClear}
           handleInputKeyPress={this.handleInputKeyPress}
         />
         <MajorOptions
