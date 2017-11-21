@@ -2,8 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div `
-  border: 4px solid grey;
-  ${'' /* width: 700px; */}
+  border-top: 4px solid grey;
+  border-bottom: 4px solid grey;
+  border-left: 4px solid grey;
+  width: ${props =>
+    'calc(100% - ' + props.width + ')' || 'calc(100% - 60px)'
+  };
+  height: ${props => props.height || '50px'};
+  float: left;
 `
 
 const Input = styled.input `
@@ -11,10 +17,8 @@ const Input = styled.input `
   outline: none;
   font-size: 20px;
   padding-left: 10px;
-  width: ${props =>
-    'calc(100% - ' + props.width + ')' || 'calc(100% - 60px)'
-  };
-  height: ${props => props.height || '50px'};
+  width: 100%;
+  height: 100%;
 `
 
 const Button = styled.button `
@@ -24,25 +28,29 @@ const Button = styled.button `
   padding: 0px;
   float: right;
   color: white;
-  width: ${props => props.width || '60px'};
+  width: ${props => props.width || '120px'};
   height: ${props => props.height || '50px'};
+  transition: background 0.5s;
+  &:hover {
+    background: lightgrey;
+  }
 `
 
 const WIDTH = "120px", HEIGHT = "50px";
 
 const SearchBar = (props) => {
   return (
-    <Div className="SearchBar">
-      <Input
-        // id="search-field"
-        type="text"
-        value={props.inputValue}
-        placeholder="Find your name here..."
-        onChange={props.handleInputChange}
-        onKeyDown={props.handleInputKeyPress}
-        width={WIDTH}
-        height={HEIGHT}
-      />
+    <div>
+      <Div width={WIDTH} height={HEIGHT}>
+        <Input
+          // id="search-field"
+          type="text"
+          value={props.inputValue}
+          placeholder="Find your name here..."
+          onChange={props.handleInputChange}
+          onKeyDown={props.handleInputKeyPress}
+        />
+      </Div>
       <Button
         id="clear-button"
         onClick={props.handleClear}
@@ -51,7 +59,7 @@ const SearchBar = (props) => {
       >
         Clear (ESC)
       </Button>
-    </Div>
+    </div>
   );
 }
 
