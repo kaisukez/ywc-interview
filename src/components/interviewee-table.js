@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Table = styled.table `
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-`
-
 const ItervieweeTable = (props) => {
-  const renderRow = () => {
+  const getRow = () => {
     const input = props.inputValue.split(' ').filter(word => word !== "");
     let rowData;
 
@@ -17,8 +11,11 @@ const ItervieweeTable = (props) => {
     } else {
       rowData = props.intervieweeList.filter(person => checkIfInclude(person, input))
     }
+    return rowData;
+  }
 
-    return rowData.map((person, index) =>
+  const renderRow = () => {
+    return getRow().map((person, index) =>
         <tr key={index}>
           <td>{person.interviewRef}</td>
           <td>{person.firstName + " " + person.lastName}</td>
@@ -37,19 +34,28 @@ const ItervieweeTable = (props) => {
 
   // console.log(props.intervieweeList.filter(people => people.major === props.major))
 
+  if(getRow().length === 0) {
+    return (
+      <div>
+        <p className="name-not-found">Sorry, can't find your name.</p>
+        <p className="name-not-found">Please type your name again.</p>
+      </div>
+    )
+  }
+
   return (
     <div>
-      <Table>
+      <table>
         <thead>
           <tr>
-            <th>Ref</th>
-            <th>Name</th>
+            <th className="semi-bold th-left">Ref</th>
+            <th className="semi-bold th-right">Name</th>
           </tr>
         </thead>
         <tbody>
           {renderRow()}
         </tbody>
-      </Table>
+      </table>
     </div>
   );
 }

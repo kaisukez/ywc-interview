@@ -14,7 +14,6 @@ const InnerOption = styled.div `
   line-height: ${props => (props.height - 2*props.padding) + 'px'};
   height: 100%;
 
-
   background: ${props => props.checked ? "lightgrey" : "grey"};
   color: white;
   cursor: pointer;
@@ -22,9 +21,12 @@ const InnerOption = styled.div `
   &:hover {
     background: lightgrey;
   }
+
+  text-transform: uppercase;
+  font-weight: 600;
 `
 
-const HEIGHT = 60, PADDING = 10;
+const HEIGHT = 60, PADDING = 9;
 
 const MajorOptions = (props) => {
   return (

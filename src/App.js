@@ -19,8 +19,8 @@ class App extends Component {
     this.state = {
       intervieweeList: [],
       inputValue: "",
-      major: "programming",
-      majorTemp: "programming"
+      major: "content",
+      majorTemp: "content"
     }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleMajorChange = this.handleMajorChange.bind(this)

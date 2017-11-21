@@ -39,6 +39,9 @@ const Button = styled.button `
   &:hover {
     background: lightgrey;
   }
+
+  text-transform: uppercase;
+  font-weight: 600;
 `
 
 const WIDTH = 120, HEIGHT = 50;

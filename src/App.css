@@ -1,8 +1,52 @@
+*:lang(en) {
+  font-family: Nunito Sans;
+}
+
+*:lang(th) {
+  font-family: Nunito Sans;
+}
+
+.semi-bold {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .App {
-  width: 650px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 #clear-button {
   outline: none;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 100%;*/
+}
+
+table, td, tr, th {
+  border: 2px solid grey;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: grey;
+  color: white;
+}
+
+.th-left {
+  border-right: 2px solid lightgrey;
+  width: 110px;
+}
+
+.th-right {
+  border-left: 2px solid lightgrey;
+  width: 320px;
+}
+
+.name-not-found {
+  text-align: center;
 }
