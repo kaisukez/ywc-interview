@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const ItervieweeTable = (props) => {
   const getRow = () => {
@@ -17,7 +16,7 @@ const ItervieweeTable = (props) => {
   const renderRow = () => {
     return getRow().map((person, index) =>
         <tr key={index}>
-          <td>{person.interviewRef}</td>
+          <td className="semi-bold">{person.interviewRef}</td>
           <td>{person.firstName + " " + person.lastName}</td>
         </tr>
     )
