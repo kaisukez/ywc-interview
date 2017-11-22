@@ -6,9 +6,9 @@ const Wrapper = styled.div `
 `
 
 const Div = styled.div `
-  border-top: 4px solid grey;
-  border-bottom: 4px solid grey;
-  border-left: 4px solid grey;
+  border-top: 4px solid rgb(42, 73, 92);
+  border-bottom: 4px solid rgb(42, 73, 92);
+  border-left: 4px solid rgb(42, 73, 92);
   width: ${props =>
     'calc(100% - ' + props.width + 'px)' || 'calc(100% - 60px)'
   };
@@ -28,7 +28,7 @@ const Input = styled.input `
 const Button = styled.button `
   border: none;
   outline: none;
-  background: grey;
+  background: rgb(42, 73, 92);
   padding: 0px;
   float: right;
   color: white;
@@ -37,7 +37,7 @@ const Button = styled.button `
   transition: background 0.5s;
   cursor: pointer;
   &:hover {
-    background: lightgrey;
+    background: rgb(135, 195, 232);
   }
 
   text-transform: uppercase;

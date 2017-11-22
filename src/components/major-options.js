@@ -14,12 +14,12 @@ const InnerOption = styled.div `
   line-height: ${props => (props.height - 2*props.padding) + 'px'};
   height: 100%;
 
-  background: ${props => props.checked ? "lightgrey" : "grey"};
+  background: ${props => props.checked ? "rgb(135, 195, 232)" : "rgb(42, 73, 92)"};
   color: white;
   cursor: pointer;
   transition: background 0.5s;
   &:hover {
-    background: lightgrey;
+    background: rgb(135, 195, 232);
   }
 
   text-transform: uppercase;

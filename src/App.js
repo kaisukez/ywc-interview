@@ -81,7 +81,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="white lang-th">ผู้ผ่านเข้ารอบสัมภาษณ์ YWC15</h1>
+        <Margin margin="20px" />
+        <h1 className="header white lang-th">ผู้ผ่านเข้ารอบสัมภาษณ์ YWC15</h1>
+        <Margin margin="20px" />
+
         <SearchBar
           inputValue={this.state.inputValue}
           handleInputChange={this.handleInputChange}
@@ -89,16 +92,19 @@ class App extends Component {
           handleInputKeyPress={this.handleInputKeyPress}
         />
         <Margin margin="5px" />
+
         <MajorOptions
           major={this.state.major}
           handleMajorChange={this.handleMajorChange}
         />
-        <Margin margin="5px" />
+        <Margin margin="20px" />
+
         <IntervieweeTable
           intervieweeList={this.state.intervieweeList}
           major={this.state.major}
           inputValue={this.state.inputValue}
         />
+        <Margin margin="20px" />
       </div>
     );
   }

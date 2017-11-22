@@ -20,6 +20,10 @@ body {
   margin: 0 auto;
 }
 
+.header {
+  text-align: center;
+}
+
 #clear-button {
   outline: none;
 }
@@ -32,28 +36,28 @@ table {
   margin-left: auto;
   margin-right: auto;
   color: white;
-  /*width: 100%;*/
 }
 
 table, td, tr, th {
-  border: 2px solid grey;
+  border: 2px solid rgb(87, 102, 111);
   padding: 10px;
   text-align: center;
-  font-size: 1.03em;
+  background: rgba(255, 255, 255, 0.0275);
 }
 
 th {
-  background: grey;
+  /*background: rgb(40, 82, 108);*/
+  background: rgb(42, 73, 92);
   color: white;
 }
 
 .th-left {
-  border-right: 2px solid lightgrey;
+  border-right: 2px solid rgb(87, 102, 111);
   width: 110px;
 }
 
 .th-right {
-  border-left: 2px solid lightgrey;
+  border-left: 2px solid rgb(87, 102, 111);
   width: 320px;
 }
 

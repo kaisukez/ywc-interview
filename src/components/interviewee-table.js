@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Margin = styled.div `
+  margin-top: ${props => props.margin}
+`
 
 const ItervieweeTable = (props) => {
   const getRow = () => {
@@ -34,6 +39,7 @@ const ItervieweeTable = (props) => {
     if(rowData.length === 1) {
       return (
         <div>
+          <Margin margin="20px" />
           <p className="name-not-found white lang-th">ยินดีด้วย!</p>
           <p className="name-not-found white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
         </div>
