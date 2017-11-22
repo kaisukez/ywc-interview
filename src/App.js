@@ -91,7 +91,7 @@ class App extends Component {
           handleClear={this.handleClear}
           handleInputKeyPress={this.handleInputKeyPress}
         />
-        <Margin margin="5px" />
+        <Margin margin="15px" />
 
         <MajorOptions
           major={this.state.major}

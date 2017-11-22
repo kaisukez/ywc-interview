@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div `
-  height: ${props => props.height || '50px'};Wrapper
+  height: ${props => props.height || '50px'};
+  box-shadow: 0px 0 60px 7px rgba(42, 73, 92, 0.8);
 `
 
 const Div = styled.div `
@@ -34,10 +35,11 @@ const Button = styled.button `
   color: white;
   width: ${props => props.width + 'px'};
   height: ${props => props.height + 'px'};
-  transition: background 0.5s;
+  transition: all 0.5s;
   cursor: pointer;
   &:hover {
     background: rgb(135, 195, 232);
+    box-shadow: 0px 0 150px 3px rgba(135, 195, 232, 0.1);
   }
 
   text-transform: uppercase;

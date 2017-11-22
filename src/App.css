@@ -39,10 +39,10 @@ table {
 }
 
 table, td, tr, th {
-  border: 2px solid rgb(87, 102, 111);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   padding: 10px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.0275);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 th {
@@ -52,12 +52,12 @@ th {
 }
 
 .th-left {
-  border-right: 2px solid rgb(87, 102, 111);
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
   width: 110px;
 }
 
 .th-right {
-  border-left: 2px solid rgb(87, 102, 111);
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
   width: 320px;
 }
 

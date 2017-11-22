@@ -15,11 +15,13 @@ const InnerOption = styled.div `
   height: 100%;
 
   background: ${props => props.checked ? "rgb(135, 195, 232)" : "rgb(42, 73, 92)"};
+  box-shadow: ${props => props.checked ? "0px 0 75px 5px rgba(42, 73, 92, 0.40)" : "0 0 0 0 rgba(42, 73, 92, 0.85)"};
   color: white;
   cursor: pointer;
-  transition: background 0.5s;
+  transition: all 0.5s;
   &:hover {
     background: rgb(135, 195, 232);
+    box-shadow: 0px 0 75px 5px rgba(42, 73, 92, 0.55);
   }
 
   text-transform: uppercase;
