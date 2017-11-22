@@ -19,7 +19,7 @@ const Div = styled.div `
 const Input = styled.input `
   border: none;
   outline: none;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 10px;
   width: 100%;
   height: 100%;
@@ -52,9 +52,10 @@ const SearchBar = (props) => {
       <Div width={WIDTH} height={HEIGHT}>
         <Input
           // id="search-field"
+          className="lang-th"
           type="text"
           value={props.inputValue}
-          placeholder="Find your name here..."
+          placeholder="ค้นหาชื่อ"
           onChange={props.handleInputChange}
           onKeyDown={props.handleInputKeyPress}
         />

@@ -4,7 +4,6 @@ const ItervieweeTable = (props) => {
   const getRow = () => {
     const input = props.inputValue.split(' ').filter(word => word !== "");
     let rowData;
-
     if(input.length === 0) {
       rowData = props.intervieweeList.filter(person => person.major === props.major)
     } else {
@@ -13,11 +12,11 @@ const ItervieweeTable = (props) => {
     return rowData;
   }
 
-  const renderRow = () => {
-    return getRow().map((person, index) =>
+  const renderRow = (rowData) => {
+    return rowData.map((person, index) =>
         <tr key={index}>
           <td className="semi-bold">{person.interviewRef}</td>
-          <td>{person.firstName + " " + person.lastName}</td>
+          <td className="lang-th">{person.firstName + " " + person.lastName}</td>
         </tr>
     )
   }
@@ -31,13 +30,26 @@ const ItervieweeTable = (props) => {
     )
   }
 
+  const renderCongrat = () => {
+    if(rowData.length === 1) {
+      return (
+        <div>
+          <p className="name-not-found white lang-th">ยินดีด้วย!</p>
+          <p className="name-not-found white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
+        </div>
+      )
+    }
+  }
+
   // console.log(props.intervieweeList.filter(people => people.major === props.major))
 
-  if(getRow().length === 0) {
+  const rowData = getRow();
+
+  if(rowData.length === 0) {
     return (
       <div>
-        <p className="name-not-found">Sorry, can't find your name.</p>
-        <p className="name-not-found">Please type your name again.</p>
+        <p className="name-not-found white lang-th">ขออภัย ไม่เจอชื่อที่คุณค้นหา</p>
+        <p className="name-not-found white lang-th">ลองกรอกใหม่อีกครั้ง</p>
       </div>
     )
   }
@@ -52,9 +64,10 @@ const ItervieweeTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {renderRow()}
+          {renderRow(rowData)}
         </tbody>
       </table>
+      {renderCongrat()}
     </div>
   );
 }

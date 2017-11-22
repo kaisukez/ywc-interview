@@ -6,8 +6,8 @@ body {
   font-family: Nunito Sans;
 }
 
-*:lang(th) {
-  font-family: Nunito Sans;
+.lang-th {
+  font-family: 'Prompt', sans-serif;
 }
 
 .semi-bold {
@@ -24,7 +24,7 @@ body {
   outline: none;
 }
 
-.header {
+.white {
   color: white;
 }
 
@@ -39,6 +39,7 @@ table, td, tr, th {
   border: 2px solid grey;
   padding: 10px;
   text-align: center;
+  font-size: 1.03em;
 }
 
 th {
