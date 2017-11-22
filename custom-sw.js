@@ -1,3 +1,5 @@
+var CACHE_NAME = 'my-site-cache-v1';
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)

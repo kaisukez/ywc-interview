@@ -16,10 +16,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts build && cra-append-sw --mode dev ./custom-sw.js",
-    "build": "react-scripts build && cra-append-sw ./custom-sw.js",
-    /*"start": "react-scripts start",*/
-    /*"build": "react-scripts build",*/
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
