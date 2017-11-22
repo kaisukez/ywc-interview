@@ -40,12 +40,6 @@ export default function register() {
         registerValidSW(swUrl);
       }
     });
-
-    window.addEventListener('fetch', function(event) {
-      event.respondWith(
-        new Response('This page is taken by service-worker')
-      )
-    })
   }
 }
 
