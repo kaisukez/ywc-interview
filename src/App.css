@@ -51,6 +51,14 @@ th {
   color: white;
 }
 
+/*tr {
+  transition: all 0.10s;
+}*/
+
+tr:hover {
+  background: rgba(96, 96, 96, 0.84);
+}
+
 .th-left {
   border-right: 2px solid rgba(255, 255, 255, 0.7);
   width: 110px;
