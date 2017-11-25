@@ -69,6 +69,29 @@ tr:hover {
   width: 320px;
 }
 
-.name-not-found {
+.text-center {
   text-align: center;
+}
+
+/*------------------------------*/
+
+.big-font {
+  font-size: 1.55em;
+}
+
+.congrat-image {
+  max-width: 375px;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  color: white;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: rgb(117, 198, 247);
 }

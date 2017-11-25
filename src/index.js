@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import MainApp from './App';
+import IndividualPageApp from './IndividualPageApp';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-// ReactDOM.render((
-//   <div>
-//     <Helmet>
-//       <meta property="og:url" content="https://kaisukez.github.io/ywc-interview" />
-//       <meta property="og:type" content="website" />
-//       <meta property="og:title" content="ประกาศผล YWC15" />
-//       <meta property="og:description" content="ยินดีด้วย คุณติดรอบสัมภาษณ์" />
-//       <meta property="og:image" content="http://i0.kym-cdn.com/entries/icons/mobile/000/013/564/doge.jpg" />
-//     </Helmet>
-//   </div>
-// ), document.getElementById('meta'));
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+      <Route path="/ref/:refno" component={ IndividualPageApp } />
+      <Route path="/" component={ MainApp } />
+    </Switch>
+  </BrowserRouter>
+  , document.getElementById('root'));
 registerServiceWorker();

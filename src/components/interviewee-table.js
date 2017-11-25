@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
 const Margin = styled.div `
   margin-top: ${props => props.margin}
 `
@@ -24,7 +24,9 @@ const ItervieweeTable = (props) => {
     return rowData.map((person, index) =>
         <tr key={index}>
           <td className="semi-bold">{person.interviewRef}</td>
-          <td className="lang-th">{person.firstName + " " + person.lastName}</td>
+          <td>
+            <Link className="lang-th link" to={`/ref/${person.interviewRef.toLowerCase()}`}>{person.firstName + " " + person.lastName}</Link>
+          </td>
         </tr>
     )
   }
@@ -43,8 +45,8 @@ const ItervieweeTable = (props) => {
       return (
         <div>
           <Margin margin="20px" />
-          <p className="name-not-found white lang-th">ยินดีด้วย!</p>
-          <p className="name-not-found white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
+          <p className="text-center white lang-th">ยินดีด้วย!</p>
+          <p className="text-center white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
         </div>
       )
     }
@@ -57,14 +59,14 @@ const ItervieweeTable = (props) => {
   if(rowData.length === 0 && loadState === 0) {
     return (
       <div>
-        <p className="name-not-found white lang-th">กำลังโหลดข้อมูล</p>
+        <p className="text-center white lang-th">กำลังโหลดข้อมูล</p>
       </div>
     )
   } else if(rowData.length === 0 && loadState === 1) {
     return (
       <div>
-        <p className="name-not-found white lang-th">ขออภัย ไม่เจอชื่อที่คุณค้นหา</p>
-        <p className="name-not-found white lang-th">ลองกรอกใหม่อีกครั้ง</p>
+        <p className="text-center white lang-th">ขออภัย ไม่เจอชื่อที่คุณค้นหา</p>
+        <p className="text-center white lang-th">ลองกรอกใหม่อีกครั้ง</p>
       </div>
     )
   }
