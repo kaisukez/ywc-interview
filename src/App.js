@@ -74,7 +74,8 @@ class App extends Component {
   handleMajorChange(major) {
     this.setState({
       major,
-      majorTemp: major
+      majorTemp: major,
+      inputValue: ""
     })
   }
 
