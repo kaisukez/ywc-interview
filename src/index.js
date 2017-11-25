@@ -12,7 +12,6 @@ ReactDOM.render(
     <Switch>
       <Route path="/ywc-interview/ref/:refno" component={ IndividualPageApp } />
       <Route path="/ywc-interview/" component={ MainApp } />
-      <Route path="/" component={ MainApp } />
     </Switch>
   </BrowserRouter>
   , document.getElementById('root'));

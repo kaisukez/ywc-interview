@@ -87,11 +87,19 @@ tr:hover {
   margin-right: auto;
 }
 
-.link {
+.link, .ref-link {
   color: white;
 }
 
-.link:hover {
+.link:hover, .ref-link:hover {
   text-decoration: none;
   color: rgb(117, 198, 247);
+}
+
+.ref-link {
+  font-size: 1.15em;
+}
+
+.center {
+  text-align: center;
 }

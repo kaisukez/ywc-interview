@@ -56,22 +56,26 @@ class IndividualPageApp extends Component {
         <Margin margin="40px" />
         <img src={imageFile} className="congrat-image" alt="doge" />
 
-        <div
-          className="fb-share-button"
-          data-href="https://kaisukez.github.io/ywc-interview/"
-          data-layout="button"
-          data-size="small"
-          data-mobile-iframe="true"
-        >
-          <a
-            className="fb-xfbml-parse-ignore"
-            target="_blank"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
-            >
-              Share
-            </a>
+        <Margin margin="25px" />
+        <div className="center">
+          <div
+            className="fb-share-button"
+            data-href="https://kaisukez.github.io/ywc-interview/"
+            data-layout="button"
+            data-size="small"
+            data-mobile-iframe="true"
+          >
+            <a
+              className="fb-xfbml-parse-ignore ref-link"
+              target="_blank"
+              href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
+              >
+                Share on Facebook
+              </a>
+          </div>
+          <Margin margin="10px" />
+          <Link to="/ywc-interview" className="ref-link">Go Home</Link>
         </div>
-        <Link to="/ywc-interview">back to home</Link>
       </div>
     );
   }
