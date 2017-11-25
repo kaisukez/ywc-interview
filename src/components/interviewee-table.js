@@ -76,8 +76,8 @@ const ItervieweeTable = (props) => {
       <table>
         <thead>
           <tr>
-            <th className="semi-bold th-left">Ref</th>
-            <th className="semi-bold th-right">Name</th>
+            <th className="semi-bold th-left lang-th">รหัส</th>
+            <th className="semi-bold th-right lang-th">ชื่อ - นามสกุล</th>
           </tr>
         </thead>
         <tbody>

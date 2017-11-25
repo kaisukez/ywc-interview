@@ -15,7 +15,8 @@ class IndividualPageApp extends Component {
     this.state = {
       refno: this.props.match.params.refno,
       name: undefined,
-      major: undefined
+      major: undefined,
+      loadState: "init"
     }
   }
 
@@ -27,7 +28,12 @@ class IndividualPageApp extends Component {
         if(user.length === 1) {
           this.setState({
             name: user[0].firstName + ' ' + user[0].lastName,
-            major: user[0].major
+            major: user[0].major,
+            loadState: "success"
+          })
+        } else {
+          this.setState({
+            loadState: "fail"
           })
         }
       })
@@ -38,11 +44,18 @@ class IndividualPageApp extends Component {
   }
 
   render() {
-    if(!this.state.name) {
+    if(this.state.loadState === "init") {
       return (
         <div className="IndividualPageApp">
           <Margin margin="20px" />
-          <p className="text-center white lang-th">url error</p>
+          <p className="text-center white lang-th">กำลังโหลดข้อมูล</p>
+        </div>
+      )
+    } else if(this.state.loadState === "fail") {
+      return (
+        <div className="IndividualPageApp">
+          <Margin margin="20px" />
+          <p className="text-center white lang-th">ขออภัย ไม่เจอหน้าที่คุณค้นหา</p>
         </div>
       )
     }
@@ -66,15 +79,15 @@ class IndividualPageApp extends Component {
             data-mobile-iframe="true"
           >
             <a
-              className="fb-xfbml-parse-ignore ref-link"
+              className="fb-xfbml-parse-ignore ref-link lang-th"
               target="_blank"
               href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
               >
-                Share on Facebook
+                แชร์ลง Facebook
               </a>
           </div>
           <Margin margin="10px" />
-          <Link to="/ywc-interview" className="ref-link">Go Home</Link>
+          <Link to="/ywc-interview" className="ref-link lang-th">กลับหน้าหลัก</Link>
         </div>
       </div>
     );
