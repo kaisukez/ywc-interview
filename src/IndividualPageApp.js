@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -67,12 +66,12 @@ class IndividualPageApp extends Component {
           <a
             className="fb-xfbml-parse-ignore"
             target="_blank"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2F${this.state.refno}%2F&amp;src=sdkpreparse`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
             >
               Share
             </a>
         </div>
-        <Link to="/">back to home</Link>
+        <Link to="/ywc-interview">back to home</Link>
       </div>
     );
   }
