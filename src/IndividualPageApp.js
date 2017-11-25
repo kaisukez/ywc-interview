@@ -66,7 +66,7 @@ class IndividualPageApp extends Component {
           <a
             className="fb-xfbml-parse-ignore"
             target="_blank"
-            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2F${this.state.refno}&amp;src=sdkpreparse`}
             >
               Share
             </a>

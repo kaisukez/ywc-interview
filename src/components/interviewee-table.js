@@ -25,7 +25,7 @@ const ItervieweeTable = (props) => {
         <tr key={index}>
           <td className="semi-bold">{person.interviewRef}</td>
           <td>
-            <Link className="lang-th link" to={`/ywc-interview/ref/${person.interviewRef.toLowerCase()}`}>{person.firstName + " " + person.lastName}</Link>
+            <Link className="lang-th link" to={`/ywc-interview/${person.interviewRef.toLowerCase()}`}>{person.firstName + " " + person.lastName}</Link>
           </td>
         </tr>
     )

@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/ywc-interview/ref/:refno" component={ IndividualPageApp } />
+      <Route path="/ywc-interview/:refno" component={ IndividualPageApp } />
       <Route path="/ywc-interview/" component={ MainApp } />
     </Switch>
   </BrowserRouter>
