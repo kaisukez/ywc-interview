@@ -23,7 +23,7 @@ class IndividualPageApp extends Component {
     axios.get('https://ywc15.ywc.in.th/api/interview')
       .then(response => {
         const user = response.data.filter(person => person.interviewRef === this.state.refno.toUpperCase())
-        console.log(response.data.filter(person => person.interviewRef === this.state.refno.toUpperCase()))
+        // console.log(response.data.filter(person => person.interviewRef === this.state.refno.toUpperCase()))
         if(user.length === 1) {
           this.setState({
             name: user[0].firstName + ' ' + user[0].lastName,
