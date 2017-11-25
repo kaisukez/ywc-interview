@@ -38,7 +38,7 @@ class App extends Component {
             return 1;
           return 0;
         })
-        console.log(intervieweeList)
+        // console.log(intervieweeList)
         this.setState({
           intervieweeList
         })

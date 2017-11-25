@@ -6,6 +6,8 @@ const Margin = styled.div `
 `
 
 const ItervieweeTable = (props) => {
+  let loadState = 0;
+
   const getRow = () => {
     const input = props.inputValue.split(' ').filter(word => word !== "");
     let rowData;
@@ -13,6 +15,7 @@ const ItervieweeTable = (props) => {
       rowData = props.intervieweeList.filter(person => person.major === props.major)
     } else {
       rowData = props.intervieweeList.filter(person => checkIfInclude(person, input))
+      loadState = 1;
     }
     return rowData;
   }
@@ -51,7 +54,13 @@ const ItervieweeTable = (props) => {
 
   const rowData = getRow();
 
-  if(rowData.length === 0) {
+  if(rowData.length === 0 && loadState === 0) {
+    return (
+      <div>
+        <p className="name-not-found white lang-th">กำลังโหลดข้อมูล</p>
+      </div>
+    )
+  } else if(rowData.length === 0 && loadState === 1) {
     return (
       <div>
         <p className="name-not-found white lang-th">ขออภัย ไม่เจอชื่อที่คุณค้นหา</p>
@@ -74,6 +83,7 @@ const ItervieweeTable = (props) => {
         </tbody>
       </table>
       {renderCongrat()}
+      {/* <div class="fb-share-button" data-href="https://kaisukez.github.io/ywc-interview/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fpg22&amp;src=sdkpreparse">Share</a></div> */}
     </div>
   );
 }
