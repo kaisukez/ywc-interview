@@ -13,7 +13,7 @@ class IndividualPageApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      refno: this.props.match.params.refno,
+      refno: this.props.match.params.refno.toLowerCase(),
       name: undefined,
       major: undefined,
       loadState: "init"
