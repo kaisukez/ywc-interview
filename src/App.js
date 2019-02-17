@@ -32,6 +32,26 @@ export const intervieweeList = [{
   lastName: 'Hatake',
   major: 'programming',
   interviewRef: 'PG01'
+}, {
+  firstName: 'Boruto',
+  lastName: 'Uzumaki',
+  major: 'content',
+  interviewRef: 'CT02'
+}, {
+  firstName: 'Sarada',
+  lastName: 'Uchiha',
+  major: 'design',
+  interviewRef: 'DS02'
+}, {
+  firstName: 'Konohamaru',
+  lastName: 'Sarutobi',
+  major: 'marketing',
+  interviewRef: 'MK02'
+}, {
+  firstName: 'Zabuza',
+  lastName: 'Momochi',
+  major: 'programming',
+  interviewRef: 'PG02'
 }]
 
 class App extends Component {
