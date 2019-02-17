@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "9a83b77bb768547fa754",
+    "revision": "2ec4354126083cdd2d0c",
     "url": "/ywc-interview/static/css/main.40d35ac2.chunk.css"
   },
   {
-    "revision": "9a83b77bb768547fa754",
-    "url": "/ywc-interview/static/js/main.9a83b77b.chunk.js"
+    "revision": "2ec4354126083cdd2d0c",
+    "url": "/ywc-interview/static/js/main.2ec43541.chunk.js"
   },
   {
     "revision": "dc8ed9c1a5f7294bf9b5",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/ywc-interview/static/media/background-new.c80106af.jpg"
   },
   {
-    "revision": "2874206b21420d7f8301565ec59b62d3",
+    "revision": "112ebfbe7e00689ab5f215ae3ac995f9",
     "url": "/ywc-interview/index.html"
   }
 ];
