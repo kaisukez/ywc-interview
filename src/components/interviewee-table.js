@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-const Margin = styled.div `
-  margin-top: ${props => props.margin}
-`
 
-const ItervieweeTable = (props) => {
+// const Margin = styled.div `
+//   margin-top: ${props => props.margin}
+// `
+
+const IntervieweeTable = (props) => {
   let loadState = 0;
 
   const getRow = () => {
@@ -40,17 +41,17 @@ const ItervieweeTable = (props) => {
     )
   }
 
-  const renderCongrat = () => {
-    if(rowData.length === 1) {
-      return (
-        <div>
-          <Margin margin="20px" />
-          <p className="text-center white lang-th">ยินดีด้วย!</p>
-          <p className="text-center white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
-        </div>
-      )
-    }
-  }
+  // const renderCongrat = () => {
+  //   if(rowData.length === 1) {
+  //     return (
+  //       <div>
+  //         <Margin margin="20px" />
+  //         <p className="text-center white lang-th">ยินดีด้วย!</p>
+  //         <p className="text-center white lang-th">คุณผ่านเข้ารอบสัมภาษณ์</p>
+  //       </div>
+  //     )
+  //   }
+  // }
 
   // console.log(props.intervieweeList.filter(people => people.major === props.major))
 
@@ -84,10 +85,10 @@ const ItervieweeTable = (props) => {
           {renderRow(rowData)}
         </tbody>
       </table>
-      {renderCongrat()}
+      {/* {renderCongrat()} */}
       {/* <div class="fb-share-button" data-href="https://kaisukez.github.io/ywc-interview/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fpg22&amp;src=sdkpreparse">Share</a></div> */}
     </div>
   );
 }
 
-export default ItervieweeTable;
+export default IntervieweeTable;

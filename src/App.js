@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import styled from 'styled-components';
-// import _ from 'lodash';
 
 import SearchBar from './components/search-bar'
 import MajorOptions from './components/major-options'
@@ -12,6 +11,28 @@ import './App.css';
 const Margin = styled.div `
   margin-top: ${props => props.margin}
 `
+
+export const intervieweeList = [{
+  firstName: 'Naruto',
+  lastName: 'Uzumaki',
+  major: 'content',
+  interviewRef: 'CT01'
+}, {
+  firstName: 'Sasuke',
+  lastName: 'Uchiha',
+  major: 'design',
+  interviewRef: 'DS01'
+}, {
+  firstName: 'Sakura',
+  lastName: 'Haruno',
+  major: 'marketing',
+  interviewRef: 'MK01'
+}, {
+  firstName: 'Kakashi',
+  lastName: 'Hatake',
+  major: 'programming',
+  interviewRef: 'PG01'
+}]
 
 class App extends Component {
   constructor(props) {
@@ -29,23 +50,24 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://ywc15.ywc.in.th/api/interview')
-      .then(response => {
-        const intervieweeList = response.data.sort((a,b) => {
-          if(a.interviewRef < b.interviewRef)
-            return -1;
-          if(a.interviewRef > b.interviewRef)
-            return 1;
-          return 0;
-        })
-        // console.log(intervieweeList)
-        this.setState({
-          intervieweeList
-        })
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    // axios.get('https://ywc15.ywc.in.th/api/interview')
+    //   .then(response => {
+    //     const intervieweeList = response.data.sort((a,b) => {
+    //       if(a.interviewRef < b.interviewRef)
+    //         return -1;
+    //       if(a.interviewRef > b.interviewRef)
+    //         return 1;
+    //       return 0;
+    //     })
+    //     // console.log(intervieweeList)
+    //     this.setState({
+    //       intervieweeList
+    //     })
+    //   })
+    //   .catch(err => {
+    //     console.log(err)
+    //   })
+    this.setState({ intervieweeList })
   }
 
   handleInputChange(event) {

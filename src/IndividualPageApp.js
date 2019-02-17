@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
+// import axios from 'axios';
+
+import { intervieweeList } from './App'
 
 import imageFile from './doge.jpg';
 
@@ -13,7 +15,7 @@ class IndividualPageApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      refno: this.props.match.params.refno.toLowerCase(),
+      refno: this.props.match.params.refno.toUpperCase(),
       name: undefined,
       major: undefined,
       loadState: "init"
@@ -21,22 +23,27 @@ class IndividualPageApp extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://ywc15.ywc.in.th/api/interview')
-      .then(response => {
-        const user = response.data.filter(person => person.interviewRef === this.state.refno.toUpperCase())
-        // console.log(response.data.filter(person => person.interviewRef === this.state.refno.toUpperCase()))
-        if(user.length === 1) {
-          this.setState({
-            name: user[0].firstName + ' ' + user[0].lastName,
-            major: user[0].major,
-            loadState: "success"
-          })
-        } else {
-          this.setState({
-            loadState: "fail"
-          })
-        }
-      })
+    // axios.get('https://ywc15.ywc.in.th/api/interview')
+    //   .then(response => {
+    //     const user = response.data.filter(person => person.interviewRef === this.state.refno)
+    //     if(user.length === 1) {
+    //       this.setState({
+    //         name: user[0].firstName + ' ' + user[0].lastName,
+    //         major: user[0].major,
+    //         loadState: "success"
+    //       })
+    //     } else {
+    //       this.setState({
+    //         loadState: "fail"
+    //       })
+    //     }
+    //   })
+    const person = intervieweeList.filter(person => person.interviewRef === this.state.refno)
+    this.setState({
+      name: person[0].firstName + ' ' + person[0].lastName,
+      major: person[0].major,
+      loadState: "success"
+    })
   }
 
   capitalize(string) {
@@ -80,7 +87,7 @@ class IndividualPageApp extends Component {
           >
             <a
               className="fb-xfbml-parse-ignore ref-link lang-th"
-              target="_blank"
+              // target="_blank"
               href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkaisukez.github.io%2Fywc-interview%2Fref%2F${this.state.refno}&amp;src=sdkpreparse`}
               >
                 แชร์ลง Facebook
